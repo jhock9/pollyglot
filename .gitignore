@@ -1,0 +1,11 @@
+Thumbs.db
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore folders 
+/node_modules/
+# /zsh-syntax-highlighting/
+
+# Ignore files with private information
+.env
