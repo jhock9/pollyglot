@@ -114,6 +114,17 @@ body {
   justify-content: space-between;
 }
 
+#loading-panel {
+  justify-content: center;
+}
+
+#api-message {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
 .panel h3 {
   font-size: 2.5rem;
   margin: 2.5rem;
