@@ -1,4 +1,10 @@
+import fs from "fs";
+import path from "path";
 import OpenAI from 'openai';
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+  dangerouslyAllowBrowser: true,
+});
 
 const actionPanel = document.getElementById('action-panel');
 const loadingPanel = document.getElementById('loading-panel')
@@ -6,6 +12,7 @@ const outputPanel = document.getElementById('output-panel');
 const textToTranslate = document.getElementById('text-to-translate');
 const originalText = document.getElementById('original-text');
 const translationText = document.getElementById('translation-text');
+const speakBtn = document.getElementById('speak-btn');
 const currentCount = document.getElementById('current-count');
 const languageRadios = document.getElementsByName('language');
 const translateBtn = document.getElementById('translate-btn');
@@ -47,11 +54,6 @@ const translate = async (text, language) => {
   ];
   
   try {
-    const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-      dangerouslyAllowBrowser: true,
-    });
-    
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: messages,
@@ -99,3 +101,21 @@ startOverBtn.addEventListener('click', () => {
   outputPanel.classList.add('hide');
   actionPanel.classList.remove('hide');
 });
+
+const speechFile = path.resolve("./speech.mp3");
+
+const getAudio = async (text) => {
+  const mp3 = await openai.audio.speech.create({
+    model: "tts-1",
+    voice: "echo",
+    input: text,
+  });
+  const buffer = Buffer.from(await mp3.arrayBuffer());
+  await fs.promises.writeFile(speechFile, buffer);
+}
+
+speakBtn.addEventListener('click', async () => {
+  await getAudio(translationText.value);
+  const audio = new Audio(speechFile);
+  audio.play();
+})

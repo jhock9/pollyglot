@@ -210,6 +210,13 @@ body {
   background-color: var(--blue);
 }
 
+#speak-btn {
+  margin-left: 0.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 footer {
   width: 100%;
   font-size: 1.5rem;
