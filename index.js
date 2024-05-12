@@ -1,14 +1,14 @@
 import OpenAI from 'openai';
 
 const actionPanel = document.getElementById('action-panel');
+const loadingPanel = document.getElementById('loading-panel')
+const outputPanel = document.getElementById('output-panel');
 const textToTranslate = document.getElementById('text-to-translate');
+const originalText = document.getElementById('original-text');
+const translationText = document.getElementById('translation-text');
 const currentCount = document.getElementById('current-count');
 const languageRadios = document.getElementsByName('language');
 const translateBtn = document.getElementById('translate-btn');
-const loadingPanel = document.querySelector('.loading-panel')
-const outputPanel = document.getElementById('output-panel');
-const originalText = document.getElementById('original-text');
-const translationText = document.getElementById('translation-text');
 const startOverBtn = document.getElementById('start-over-btn');
 
 textToTranslate.addEventListener('input', () => {
@@ -34,51 +34,17 @@ const getSelectedLanguage = () => {
     return null; // No language selected
 }
 
-translateBtn.addEventListener('click', () => {
-    const selectedLanguage = getSelectedLanguage();
-    const text = textToTranslate.value;
-    
-    if (text && selectedLanguage) {
-      loadingPanel.classList.remove('hide');
-      actionPanel.classList.add('hide');
-      originalText.value = text;
-      
-      translate(text, selectedLanguage);      
-    } else {
-        alert('Please enter text and select a language.');
-    }
-});
-
-startOverBtn.addEventListener('click', () => {
-    // Clear inputs
-    textToTranslate.value = '';
-    originalText.value = '';
-    translationText.value = '';
-    languageRadios.forEach(radio => radio.checked = false);
-    
-    // Hide result view and show input view
-    outputPanel.classList.add('hide');
-    actionPanel.classList.remove('hide');
-});
-
 const translate = async (text, language) => {
   const messages = [
     {
       role: 'system',
-      content: 'You are PollyGlot, an intelligent language translation assistant designed to help users translate text between English, Spanish, French, and Japanese. Your main functions are to receive text from users, determine the target language they specify, and provide an accurate translation.'
+      content: 'You are PollyGlot, an intelligent language translation assistant designed to help users translate text between English, Spanish, French, and Japanese. You provide the translation text only, no extra words or explanations.'
     },
     {
       role: 'user',
-      content: `Translate this text from English to ${language}: ${text}`
-    },
-    // {
-    //   role: 'assistant',
-    //   content: 'Hello! How can I assist you today with your translation needs?'
-    // },
-    // {
-    //   role: 'user'
-    // }
-  ]
+      content: `Translate ${text} from English to ${language}`
+    }
+  ];
   
   try {
     const openai = new OpenAI({
@@ -96,12 +62,40 @@ const translate = async (text, language) => {
     
   } catch (err) {
     console.log('Error:', err)
-    loadingPanel.innerText = 'Unable to translate. Please refresh and try again.'
+    loadingPanel.innerHTML = 'Unable to translate.<br>Please refresh and try again.';  
+    loadingPanel.style.textAlign = 'center';
   }
-}
+};
 
 const renderTranslation = (output) => {
   loadingPanel.classList.add('hide');
   translationText.value = `${output}`;
   outputPanel.classList.remove('hide');
-}
+};
+
+translateBtn.addEventListener('click', () => {
+  const selectedLanguage = getSelectedLanguage();
+  const text = textToTranslate.value;
+  
+  if (text && selectedLanguage) {
+    loadingPanel.classList.remove('hide');
+    actionPanel.classList.add('hide');
+    originalText.value = text;
+    
+    translate(text, selectedLanguage);      
+  } else {
+    alert('Please enter text and select a language.');
+  }
+});
+
+startOverBtn.addEventListener('click', () => {
+  // Clear inputs
+  textToTranslate.value = '';
+  originalText.value = '';
+  translationText.value = '';
+  languageRadios.forEach(radio => radio.checked = false);
+  
+  // Hide result view and show input view
+  outputPanel.classList.add('hide');
+  actionPanel.classList.remove('hide');
+});
