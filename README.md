@@ -45,4 +45,4 @@ Contributions are welcome! Please follow these guidelines:
 - Submit a pull request.
 
 ## License
-This project is open source. [License details](LICENSE)
+This project is part of [Scrimba](https://v2.scrimba.com/)'s [AI Engineering Course](https://v2.scrimba.com/the-ai-engineer-path-c02v)
