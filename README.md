@@ -1,4 +1,10 @@
-# AI Translator App
+<h1 align="center">AI Translator App</h1>
+
+<p align="center">
+  <img src="screenshots/france-q.png" width="225" height="450">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="screenshots/france-r.png" width="225" height="450">
+</p>
+
 This translation web application allows users to input text and translate it into multiple languages using OpenAI's translation capabilities. The application is designed to help bridge language barriers, making it easier to communicate across different languages.
 
 ## Features
@@ -9,6 +15,7 @@ This translation web application allows users to input text and translate it int
 - HTML, CSS, JavaScript
 - Node.js and Express
 - OpenAI API (gpt-3.5-turbo, tts-1)
+- Vite.js
 
 ## Installation Instructions
 
