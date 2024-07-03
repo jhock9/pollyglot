@@ -68,7 +68,7 @@ This translation web application allows users to input text and translate it int
 4. **View Translation**: The translated text will be displayed in the output area.
 
 ## Deployment
-The application is deployed on Netlify and can be accessed [here](https://ai-translator-app.netlify.app).
+The application is deployed on Netlify and can be accessed [here](https://pollyglot-ai-app.netlify.app).
 
 ## Future Enhancements
 - **More Languages**: Expand the application to support translation into additional languages beyond the current set.
