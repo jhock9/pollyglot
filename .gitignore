@@ -9,3 +9,7 @@ Thumbs.db
 
 # Ignore specific files
 .env
+deno.lock
+
+# Local Netlify folder
+.netlify
