@@ -1,0 +1,7 @@
+[build]
+  functions = "./functions"
+
+[[redirects]]
+  from = "/translate"
+  to = "/.netlify/functions/translate"
+  status = 200
