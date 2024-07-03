@@ -1,6 +1,12 @@
-import {defineConfig} from 'vite'
-
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: []	
-})
+  plugins: [],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
+  resolve: {
+    alias: {}
+  }
+});

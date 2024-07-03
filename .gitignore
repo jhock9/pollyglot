@@ -5,6 +5,7 @@ Thumbs.db
 
 # Ignore folders 
 /node_modules/
+/dist/
 
 # Ignore specific files
 .env
