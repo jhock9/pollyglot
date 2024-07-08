@@ -1,7 +1,10 @@
 import OpenAI from "openai";
 
+const PRODUCTION_URL = 'https://pollyglot-ai-app.netlify.app';
+const isProduction = process.env.NODE_ENV === 'production';
+
 const corsHeaders = {
-  "Access-Control-Allow-Origin": isProduction ? 'https://pollyglot-ai-app.netlify.app' : '*',
+  "Access-Control-Allow-Origin": isProduction ? PRODUCTION_URL : '*',
   "Access-Control-Allow-Methods": "POST,OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
