@@ -1,7 +1,8 @@
 [build]
-  functions = "./functions"
+  publish = "dist"
+  command = "npm run build"
 
 [[redirects]]
-  from = "/translate"
-  to = "/.netlify/functions/translate"
+  from = "/*"
+  to = "/index.html"
   status = 200
