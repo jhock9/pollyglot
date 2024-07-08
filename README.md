@@ -1,8 +1,8 @@
 <h1 align="center">AI Translator App</h1>
 
 <p align="center">
-  <img src="screenshots/france-q.png" width="225" height="450">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="screenshots/france-r.png" width="225" height="450">
+  <img src="src/screenshots/france-q.png" width="225" height="450">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="src/screenshots/france-r.png" width="225" height="450">
 </p>
 
 This translation web application allows users to input text and translate it into multiple languages using OpenAI's translation capabilities. The application is designed to help bridge language barriers, making it easier to communicate across different languages.
@@ -23,17 +23,17 @@ This translation web application allows users to input text and translate it int
 - **Interactive UI**: User-friendly interface to input text and select languages.
 
 ## Technologies Used
-- HTML, CSS, JavaScript
-- Node.js and Express
+- HTML, CSS, JavaScript, Node.js
+- Cloudflare
 - OpenAI API (gpt-3.5-turbo)
-- Vite.js
 
 ## Installation Instructions
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/en/)
 - [npm](https://www.npmjs.com/)
-- [OpenAI API key](https://platform.openai.com/account/api-keys)
+- [OpenAI API key](https://platform.openai.com/account/api-keys) 
+- [Cloudflare Workers](https://workers.cloudflare.com/)
 
 ### Steps
 1. Clone the repository (make sure to replace 'your-username' with your GitHub username):
@@ -50,7 +50,7 @@ This translation web application allows users to input text and translate it int
   ```sh
   npm install
   ```
-
+  
 4. Add 'OPENAI_API_KEY' as an environment variable:
   ```sh
   echo "OPENAI_API_KEY=your-api-key" > .env
@@ -60,6 +60,18 @@ This translation web application allows users to input text and translate it int
   ```sh
   npm start
   ```
+
+6. Deploy the worker:
+  ```sh
+  wrangler deploy
+  ```
+
+7. Run the CLI:
+  ```sh
+  wrangler dev
+  ```
+
+8. Navigate to the deployed URL in your browser. 
 
 ## Usage
 1. **Input Text**: Enter the text you want to translate in the provided text box.

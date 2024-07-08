@@ -6,10 +6,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "openai": "^4.45.0"
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "openai": "^4.52.3"
   },
   "devDependencies": {
-    "vite": "latest"
+    "@cloudflare/vitest-pool-workers": "^0.4.5",
+    "vitest": "1.5.0",
+    "wrangler": "^3.60.3"
   }
 }
