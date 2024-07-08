@@ -6,6 +6,7 @@ Thumbs.db
 # Ignore folders 
 /node_modules/
 /dist/
+/workers/
 
 # Ignore specific files
 # Misc
