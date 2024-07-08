@@ -1,10 +1,6 @@
 [build]
   command = "npm run build && npm run deploy"
   publish = "dist"
-  environment = [
-    "OPENAI_API_KEY",
-    "CLOUDFLARE_API_TOKEN"
-  ]
 
 [[redirects]]
   from = "/*"
