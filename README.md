@@ -10,7 +10,7 @@ This translation web application allows users to input text and translate it int
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation Instructions](#installation-instructions)
+- [Running Locally](#running-locally)
 - [Usage](#usage)
 - [Deployment](#deployment)
 - [Future Enhancements](#future-enhancements)
