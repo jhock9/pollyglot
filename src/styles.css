@@ -1,0 +1,346 @@
+/* Styles for most mobile devices like; iPhone 12 */
+
+/* Base Styles */
+:root {
+  --green: #32CD32;
+  --blue: #028BF8;
+  --dark-blue: #035A9D; 
+  --red: #FF4400;
+  --gray:#EFF0F4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.hide {
+  display: none !important;
+  overflow: hidden !important;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 50%; /* setting default font size to 8px */
+}
+
+body {
+  background-color: #ddd;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
+}
+
+.app-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  align-items: normal;
+}
+
+.main-wrapper {
+  width: 100%;
+  height: 80%;
+  padding: 3rem 0 1.5rem 0;
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Panel Header Styles */
+.panel-header {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  color: white;
+  background-image: url('assets/worldmap.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.logo {
+  width: 13rem;
+  height: 11rem;
+  margin-right: 2rem;
+}
+
+.title-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.panel-header h1,
+.panel-header h2 {
+  margin: 0;
+}
+
+.panel-header h1 {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+
+.panel-header h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* Panel Styles */
+.panel {
+  width: 90%;
+  height: 96%;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 2.5rem;
+  border: 0.5rem solid var(--dark-blue);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#loading-panel {
+  justify-content: center;
+}
+
+#api-message {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.panel h3 {
+  font-size: 2.5rem;
+  margin: 2.5rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
+.textbox-wrapper,
+.language-selector-wrapper {
+  width: 100%;
+  height: 30%;
+}
+
+.textarea,
+.languages-wrapper {
+  width: 85%;
+  height: 80%;
+}
+
+.textarea {
+  font-size: 2.5rem;
+  padding: 1.75rem 1.5rem;
+  background-color: var(--gray);
+  border-radius: 1rem;
+  border: none;
+  resize: none;
+}
+
+.char-count {
+  margin-top: 0.5rem; 
+  margin-left: auto;
+  padding-right: 4rem;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.languages-wrapper {
+  margin-top: 1.2rem;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.language {
+  margin: 1.2rem 0;
+  width: 90%;
+  justify-content: flex-start;
+}
+
+.language .radio {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.language span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-right: 2rem;
+}
+
+.language .flag {
+  height: 3rem;
+  width: 4rem;
+  border: .115rem solid black;
+}
+
+.btn {
+  width: 85%;
+  margin: 3rem 0;
+  padding: 1rem;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  background-color: var(--dark-blue);
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--blue);
+}
+
+footer {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+footer a:visited {
+  color: black;
+}
+
+/* * Media Queries * */
+/* Height adjustments for shorter devices; like iPhone SE */
+@media (max-height: 670px) or (max-width: 365px) {
+  .main-wrapper {
+    padding: 2rem 0 1rem 0;
+  }
+  
+  .panel-header {
+    height: 20%;
+  }
+  
+  .logo {
+    width: 11rem;
+    height: 10rem;
+    margin-right: 2rem;
+  }
+  
+  .panel h3 {
+    font-size: 2.5rem;
+  }
+  
+  .textarea {
+    font-size: 2.25rem;
+  }
+  
+  .languages-wrapper {
+    margin-top: 0;
+  }
+  
+  .language {
+    margin: 1rem 0;
+  }
+  
+  .language span {
+    font-size: 2rem;
+  }
+  
+  .language .flag {
+    height: 2rem;
+    width: 3rem;
+    border: .115rem solid black;
+  }
+  
+  .btn {
+    margin: 2rem 0;
+  }
+}
+
+/* Width adjustments for tablets and larger */
+  @media (min-width: 768px) {
+  .main-wrapper {
+    padding: 3rem 0 1.5rem 0;
+  }
+    
+  .app-wrapper {
+    max-width: 45rem;
+    max-height: 90rem;
+    border-radius: 2.5rem;
+    overflow: hidden;
+  }
+  
+  .panel-header {
+    height: 20%;
+  }
+  
+  .logo {
+    width: 11rem;
+    height: 10rem;
+    margin-right: 2rem;
+  }
+  
+  .panel-header h1 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .panel {
+    height: 95%;
+  }
+  
+  .textarea,
+  .languages-wrapper,
+  .btn {
+    width: 90%;
+  }
+  
+  .panel h3 {
+    font-size: 2.5rem;
+  }
+  
+  .textarea {
+    font-size: 2.25rem;
+  }
+  
+  .char-count {
+    padding-right: 3rem;
+  } 
+  
+  /* .language-selector-wrapper {
+    height: 30%;
+  } */
+
+  .languages-wrapper {
+    margin-top: 0;
+  }
+  
+  .language span {
+    font-size: 2rem;
+  }
+  
+  .language .flag {
+    height: 2rem;
+    width: 3rem;
+    border: .115rem solid black;
+  }
+}
+
+/* Width adjustments for desktop */
+@media (min-width: 1024px) {
+  .panel h3,
+  .textarea {
+    font-size: 2rem;
+  }
+}
