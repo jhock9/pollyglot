@@ -46,8 +46,8 @@ const messages = [
 	try {
     const isLocalhost = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
     const url = isLocalhost
-      ? "http://localhost:8080/https://openai-api-worker.jon-hocker.workers.dev/"
-      : "https://openai-api-worker.jon-hocker.workers.dev/";
+      ? "http://localhost:8080/https://translator-openai-api-worker.okws.workers.dev/"
+      : "https://translator-openai-api-worker.okws.workers.dev/";
     
 		const response = await fetch(url, {
       method: 'POST',
