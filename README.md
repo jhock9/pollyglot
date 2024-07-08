@@ -28,7 +28,7 @@ This translation web application allows users to input text and translate it int
 - OpenAI API (gpt-3.5-turbo)
 - Vite.js
 
-## Installation Instructions
+## Running Locally
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/en/)
@@ -51,12 +51,7 @@ This translation web application allows users to input text and translate it int
   npm install
   ```
 
-4. Add 'OPENAI_API_KEY' as an environment variable:
-  ```sh
-  echo "OPENAI_API_KEY=your-api-key" > .env
-  ```
-
-5. Start the server:
+4. Start the server:
   ```sh
   npm start
   ```
