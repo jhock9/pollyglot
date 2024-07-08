@@ -8,8 +8,10 @@ Thumbs.db
 /dist/
 
 # Ignore specific files
+# Misc
+.DS_Store
 .env
-deno.lock
 
-# Local Netlify folder
-.netlify
+# Netlify and Cloudflare
+.netlify/
+wrangler.toml
